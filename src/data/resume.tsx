@@ -98,6 +98,28 @@ export const DATA = {
         "Joined an in-person Web3 hackathon hosted by the Ethereum Jakarta community, building and learning alongside fellow builders.",
     },
   ],
+  projects: [
+    {
+      title: "Pandu",
+      dates: "ETHJKT Hackathon · 2026",
+      description:
+        "A Web3 real-world asset (RWA) project built during ETHJKT. Pandu explores how onchain rails can make real-world assets easier to access and use.",
+      tags: ["Web3", "RWA", "Ethereum", "Hackathon"],
+      image: "/ethjkt.png",
+      github: "https://github.com/PANDUWEB3/pandu",
+    },
+  ],
+  hackathons: [
+    {
+      title: "ETHJKT Hackathon",
+      location: "Jakarta, Indonesia",
+      dates: "Ethereum Jakarta · 2026",
+      logoUrl: "/ethjkt.png",
+      description:
+        "Built Pandu, a Web3 RWA project, alongside other Indonesian builders. The weekend was a focused sprint of product thinking, rapid prototyping, and sharing ideas with the local Ethereum community.",
+      github: "https://github.com/wakhidpangestu",
+    },
+  ],
   work: [
     {
       company: "Freelance",
@@ -154,6 +176,8 @@ export const DATA = {
     {
       school: "Universitas Indraprasta PGRI (UNINDRA)",
       degree: "Bachelor of Technology, Informatics Engineering",
+      href: "https://www.unindra.ac.id/",
+      logoUrl: "/unindra.png",
       start: "July 2024",
       end: "September 2028",
       detail: "GPA: 3.72",
@@ -163,6 +187,8 @@ export const DATA = {
     {
       school: "SMK Negeri 3 Depok",
       degree: "High School Diploma, Computer and Network Engineering",
+      href: "https://www.smkn3depok.sch.id/",
+      logoUrl: "/1643812092153.jpg",
       start: "June 2021",
       end: "March 2024",
       detail: "Grade: 87",

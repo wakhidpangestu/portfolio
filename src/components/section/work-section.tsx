@@ -1,39 +1,24 @@
-import { BriefcaseBusiness, MapPin } from "lucide-react";
 import { DATA } from "@/data/resume";
+import { BriefcaseBusiness } from "lucide-react";
 
 export default function WorkSection() {
   return (
-    <div className="grid gap-8">
+    <div className="flex flex-col gap-8">
       {DATA.work.map((work) => (
-        <article
-          key={`${work.company}-${work.title}`}
-          className="border-l-2 border-border pl-5 sm:pl-6"
-        >
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-            <div className="min-w-0">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <BriefcaseBusiness className="size-4 shrink-0" aria-hidden />
-                <span>{work.company}</span>
-              </div>
-              <h3 className="mt-2 text-lg font-semibold tracking-tight">
-                {work.title}
-              </h3>
-              <div className="mt-1 flex items-center gap-1.5 text-sm text-muted-foreground">
-                <MapPin className="size-3.5 shrink-0" aria-hidden />
-                <span>{work.location}</span>
-              </div>
+        <article key={`${work.company}-${work.title}`} className="flex items-start justify-between gap-x-3">
+          <div className="flex min-w-0 flex-1 items-start gap-x-3">
+            <div className="flex size-8 flex-none items-center justify-center rounded-full border bg-muted shadow ring-2 ring-border md:size-10">
+              <BriefcaseBusiness className="size-4 text-muted-foreground" aria-hidden />
             </div>
-            <time className="shrink-0 text-sm tabular-nums text-muted-foreground">
-              {work.start} - {work.end}
-            </time>
+            <div className="min-w-0 flex-1">
+              <h3 className="font-semibold leading-none">{work.company}</h3>
+              <p className="mt-1 font-sans text-sm text-muted-foreground">{work.title} · {work.location}</p>
+              <ul className="mt-3 grid gap-1.5 text-sm leading-relaxed text-muted-foreground">
+                {work.highlights.map((highlight) => <li key={highlight} className="relative pl-3 before:absolute before:left-0 before:content-['-']">{highlight}</li>)}
+              </ul>
+            </div>
           </div>
-          <ul className="mt-4 grid gap-2 text-sm leading-relaxed text-muted-foreground">
-            {work.highlights.map((highlight) => (
-              <li key={highlight} className="relative pl-4 before:absolute before:left-0 before:text-foreground before:content-['-']">
-                {highlight}
-              </li>
-            ))}
-          </ul>
+          <time className="flex-none text-right text-xs tabular-nums text-muted-foreground">{work.start} - {work.end}</time>
         </article>
       ))}
     </div>
