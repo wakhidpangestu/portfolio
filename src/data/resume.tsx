@@ -125,7 +125,7 @@ export const DATA = {
       description:
         "All-in-one event operations platform for communities and campus organizations—unifying admin, organizer, committee, and attendee workflows in a single Flutter Web & Firebase application.",
       tags: ["Flutter", "Dart", "Firebase", "Cloud Functions", "Firestore"],
-      image: "/guyub.png",
+      image: "/guyub.svg",
       github: "https://github.com/wakhidpangestu/guyub",
     },
     {
