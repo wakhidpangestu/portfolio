@@ -1,5 +1,4 @@
 import BlurFade from "@/components/magicui/blur-fade";
-import BlurFadeText from "@/components/magicui/blur-fade-text";
 import ContactSection from "@/components/section/contact-section";
 import CredentialsSection from "@/components/section/credentials-section";
 import HackathonsSection from "@/components/section/hackathons-section";
@@ -58,15 +57,19 @@ export default function Page() {
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="flex flex-col justify-between gap-2 gap-y-6 md:flex-row">
             <div className="order-2 flex flex-col gap-2 md:order-1">
-              <BlurFadeText delay={BLUR_FADE_DELAY} className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl" yOffset={8} text={`Hi, I'm ${DATA.name.split(" ")[0]}`} />
-              <BlurFadeText className="max-w-[600px] text-muted-foreground md:text-lg lg:text-xl" delay={BLUR_FADE_DELAY} text={DATA.description} />
+              <h1 className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl">
+                {`Hi, I'm ${DATA.name.split(" ")[0]}`}
+              </h1>
+              <p className="max-w-[600px] text-muted-foreground md:text-lg lg:text-xl">
+                {DATA.description}
+              </p>
             </div>
-            <BlurFade delay={BLUR_FADE_DELAY} className="order-1 md:order-2">
+            <div className="order-1 md:order-2">
               <Avatar className="size-24 rounded-full border shadow-lg ring-4 ring-muted md:size-32">
-                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
+                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} width={128} height={128} fetchPriority="high" />
                 <AvatarFallback>{DATA.initials}</AvatarFallback>
               </Avatar>
-            </BlurFade>
+            </div>
           </div>
         </div>
       </section>

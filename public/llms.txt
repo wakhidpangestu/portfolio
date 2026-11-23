@@ -1,0 +1,42 @@
+# Wakhid Pangestu
+
+> Software Engineer, Founder & CTO at ZenLab Studio, and Indonesian Web3 & AI Builder based in Jakarta, Indonesia.
+
+- Website: https://www.wakhidpangestu.web.id
+- GitHub: https://github.com/wakhidpangestu
+- LinkedIn: https://www.linkedin.com/in/wakhidpangestu
+- Instagram: https://www.instagram.com/wakhidpangestu/
+- Email: wakhidpangestu1@gmail.com
+
+## Work Experience
+
+- **ZenLab Studio** — Founder, CTO & Software Engineer (August 2023 – Present)
+  - SaaS startup and software engineering studio building custom business software and digital products for UMKM through enterprise clients.
+  - Hardware services division via **Teknify.id** for on-demand gadget diagnostics, repair, and maintenance.
+- **CV. Fenta Mitra Teknologi** — IT Support Technician (January 2023 – May 2023)
+
+## Selected Projects & Hackathon Rankings
+
+- **ZAP (Zero Answer Policy)** — LOGICODIX 2026 · #10 Top Semifinalist
+  - Socratic cognitive AI math tutor and real-time 3D interactive whiteboard powered by Three.js/WebGL and SymPy deterministic verification.
+  - Website: https://chatzap.web.id | GitHub: https://github.com/wakhidpangestu/ZAP
+- **Zaky** — UINIC 8.0 · #9 Top Semifinalist
+  - Federated zakat distribution verification network featuring 4-eyes segregation, append-only hash-chain audit trails, Ed25519 cross-institutional attestation, and 3D office simulation.
+  - Website: https://zakyapp.vercel.app | GitHub: https://github.com/wakhidpangestu/zaky
+- **Guyub** — GDGoC ITB STACK 2026 · Top Semifinalist (In Progress)
+  - All-in-one event operations platform for communities and campus organizations built with Flutter Web & Firebase.
+  - Website: https://guyubapp.web.id | GitHub: https://github.com/wakhidpangestu/guyub
+- **Pandu** — ETHJKT Hackathon · #12 · 2026
+  - Web3 real-world asset (RWA) project exploring onchain rails for real-world assets.
+  - Website: https://www.panduweb3.my.id | GitHub: https://github.com/PANDUWEB3/pandu
+
+## Core Skills
+
+- Frontend, Mobile & Desktop: TypeScript, React.js, Next.js, Tailwind CSS, Flutter, Kotlin, Electron
+- Systems & Backend: Rust, Java, Node.js, Python, PostgreSQL
+- Web3 & AI: Solidity, Viem, AI Agents
+
+## Education
+
+- **Universitas Indraprasta PGRI (UNINDRA)** — Bachelor of Technology, Informatics Engineering (2024 – 2028)
+- **SMK Negeri 3 Depok** — Computer and Network Engineering (2021 – 2024)

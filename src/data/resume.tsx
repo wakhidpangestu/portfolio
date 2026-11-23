@@ -4,11 +4,11 @@ import { HomeIcon, InstagramIcon } from "lucide-react";
 export const DATA = {
   name: "Wakhid Pangestu",
   initials: "WP",
-  url: "https://wakhidpangestu.vercel.app",
+  url: "https://www.wakhidpangestu.web.id",
   location: "Jakarta, Indonesia",
   locationLink: "https://www.google.com/maps/place/Jakarta",
   description:
-    "Software Engineer and Indonesian Web3 Builder based in Jakarta, Indonesia.",
+    "Software Engineer, Founder & CTO at ZenLab Studio, and Indonesian Web3 & AI Builder based in Jakarta, Indonesia.",
   summary:
     "I turn ambitious ideas into products people can actually use. As a software engineer and Indonesian Web3 builder, I craft thoughtful interfaces and the systems behind them - from React and Next.js products to smart contracts and onchain experiments. I enjoy working where product craft, AI, and decentralized technology meet, and I learn fastest by shipping with communities and hackathons.",
   avatarUrl: "/me.png",
