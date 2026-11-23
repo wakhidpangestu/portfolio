@@ -32,10 +32,13 @@ const getAssets = async () => {
         res.arrayBuffer()
       ),
     ]);
+    const header = new Uint8Array(avatarBuffer, 0, 4);
+    const mime =
+      header[0] === 0xff && header[1] === 0xd8 ? "image/jpeg" : "image/png";
     return {
       cabinetGrotesk,
       clashDisplay,
-      avatarDataUri: `data:image/png;base64,${arrayBufferToBase64(avatarBuffer)}`,
+      avatarDataUri: `data:${mime};base64,${arrayBufferToBase64(avatarBuffer)}`,
     };
   } catch (error) {
     console.error("Failed to load OG assets:", error);
@@ -53,134 +56,291 @@ export default async function Image() {
           height: "100%",
           width: "100%",
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          backgroundColor: "#09090b",
-          backgroundImage:
-            "radial-gradient(circle at 85% 15%, rgba(59, 130, 246, 0.18), transparent 45%), radial-gradient(circle at 15% 85%, rgba(16, 185, 129, 0.14), transparent 45%)",
-          padding: "56px",
-          color: "#fafafa",
+          position: "relative",
+          backgroundColor: "#050507",
+          padding: "36px",
           fontFamily: "Cabinet Grotesk, sans-serif",
+          color: "#fafafa",
+          overflow: "hidden",
         }}
       >
+        {/* Subtle architectural grid overlay */}
         <div
           style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage:
+              "linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.035) 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
+          }}
+        />
+
+        {/* Ambient lighting glows */}
+        <div
+          style={{
+            position: "absolute",
+            top: "-180px",
+            right: "-120px",
+            width: "620px",
+            height: "620px",
+            borderRadius: "9999px",
+            background:
+              "radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, rgba(56, 189, 248, 0.08) 40%, transparent 70%)",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            bottom: "-220px",
+            left: "-120px",
+            width: "520px",
+            height: "520px",
+            borderRadius: "9999px",
+            background:
+              "radial-gradient(circle, rgba(16, 185, 129, 0.14) 0%, transparent 65%)",
+          }}
+        />
+
+        {/* Inner Glass Frame */}
+        <div
+          style={{
+            position: "relative",
             display: "flex",
-            alignItems: "center",
+            flexDirection: "row",
             justifyContent: "space-between",
+            alignItems: "stretch",
             width: "100%",
+            height: "100%",
+            borderRadius: "28px",
+            border: "1px solid rgba(255, 255, 255, 0.1)",
+            backgroundColor: "rgba(12, 12, 16, 0.86)",
+            padding: "48px 52px",
+            overflow: "hidden",
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: "24px" }}>
-            {assets?.avatarDataUri && (
-              <img
-                src={assets.avatarDataUri}
-                alt={DATA.name}
-                width={116}
-                height={116}
+          {/* Specular top hairline */}
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: "12%",
+              right: "12%",
+              height: "1px",
+              background:
+                "linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent)",
+            }}
+          />
+
+          {/* Left Column: Editorial Identity */}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              width: "67%",
+              paddingRight: "32px",
+            }}
+          >
+            {/* Eyebrow badge */}
+            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+              <div
                 style={{
-                  width: "116px",
-                  height: "116px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "10px",
+                  padding: "8px 16px",
                   borderRadius: "9999px",
-                  border: "3px solid rgba(255,255,255,0.2)",
-                  objectFit: "cover",
+                  border: "1px solid rgba(255,255,255,0.12)",
+                  backgroundColor: "rgba(255,255,255,0.04)",
+                  fontSize: "15px",
+                  letterSpacing: "0.1em",
+                  color: "#d4d4d8",
+                }}
+              >
+                <div
+                  style={{
+                    width: "8px",
+                    height: "8px",
+                    borderRadius: "9999px",
+                    backgroundColor: "#34d399",
+                  }}
+                />
+                <span>FOUNDER &amp; CTO · ZENLAB STUDIO</span>
+              </div>
+            </div>
+
+            {/* Hero Display Name + Subtitle */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  fontFamily: "Clash Display, sans-serif",
+                  fontSize: "78px",
+                  fontWeight: 600,
+                  lineHeight: 0.96,
+                  letterSpacing: "-0.04em",
+                  color: "#ffffff",
+                }}
+              >
+                <span>Wakhid</span>
+                <span style={{ color: "#a1a1aa" }}>Pangestu.</span>
+              </div>
+
+              <div
+                style={{
+                  fontSize: "23px",
+                  lineHeight: 1.4,
+                  color: "#a1a1aa",
+                  maxWidth: "600px",
+                }}
+              >
+                Software Engineer crafting SaaS, Web3 &amp; AI systems from
+                Jakarta, Indonesia.
+              </div>
+            </div>
+
+            {/* Bottom Architectural Metrics Bar */}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                gap: "36px",
+                paddingTop: "22px",
+                borderTop: "1px solid rgba(255,255,255,0.09)",
+              }}
+            >
+              <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+                <span
+                  style={{
+                    fontSize: "12px",
+                    letterSpacing: "0.12em",
+                    color: "#71717a",
+                  }}
+                >
+                  VENTURE
+                </span>
+                <span style={{ fontSize: "18px", color: "#f4f4f5" }}>
+                  ZenLab · Teknify.id
+                </span>
+              </div>
+
+              <div
+                style={{
+                  width: "1px",
+                  height: "32px",
+                  backgroundColor: "rgba(255,255,255,0.1)",
                 }}
               />
-            )}
-            <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-              <div
-                style={{
-                  fontSize: "20px",
-                  color: "#a1a1aa",
-                  letterSpacing: "0.02em",
-                }}
-              >
-                {DATA.location}
+
+              <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+                <span
+                  style={{
+                    fontSize: "12px",
+                    letterSpacing: "0.12em",
+                    color: "#71717a",
+                  }}
+                >
+                  CORE STACK
+                </span>
+                <span style={{ fontSize: "18px", color: "#f4f4f5" }}>
+                  TS · Rust · Java · Solidity
+                </span>
               </div>
+
               <div
                 style={{
-                  fontSize: "22px",
-                  color: "#e4e4e7",
-                  fontWeight: 600,
+                  width: "1px",
+                  height: "32px",
+                  backgroundColor: "rgba(255,255,255,0.1)",
                 }}
-              >
-                Founder & CTO · ZenLab Studio
+              />
+
+              <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+                <span
+                  style={{
+                    fontSize: "12px",
+                    letterSpacing: "0.12em",
+                    color: "#71717a",
+                  }}
+                >
+                  TRACK RECORD
+                </span>
+                <span style={{ fontSize: "18px", color: "#f4f4f5" }}>
+                  4× Hackathon Top Rank
+                </span>
               </div>
             </div>
           </div>
 
+          {/* Right Column: Double-Bezel Portrait + Domain */}
           <div
             style={{
               display: "flex",
+              flexDirection: "column",
               alignItems: "center",
-              padding: "10px 20px",
-              borderRadius: "9999px",
-              border: "1px solid rgba(255,255,255,0.16)",
-              backgroundColor: "rgba(255,255,255,0.06)",
-              fontSize: "20px",
-              color: "#d4d4d8",
+              justifyContent: "center",
+              width: "33%",
+              gap: "20px",
             }}
           >
-            wakhidpangestu.web.id
-          </div>
-        </div>
+            <div
+              style={{
+                display: "flex",
+                padding: "12px",
+                borderRadius: "36px",
+                border: "1px solid rgba(255,255,255,0.14)",
+                background:
+                  "linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02))",
+              }}
+            >
+              {assets?.avatarDataUri && (
+                <img
+                  src={assets.avatarDataUri}
+                  alt={DATA.name}
+                  width={260}
+                  height={260}
+                  style={{
+                    width: "260px",
+                    height: "260px",
+                    borderRadius: "26px",
+                    objectFit: "cover",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                  }}
+                />
+              )}
+            </div>
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "18px",
-            maxWidth: "980px",
-          }}
-        >
-          <div
-            style={{
-              fontFamily: "Clash Display, sans-serif",
-              fontSize: "68px",
-              fontWeight: 600,
-              lineHeight: 1.05,
-              letterSpacing: "-0.03em",
-              color: "#ffffff",
-            }}
-          >
-            {DATA.name}
-          </div>
-          <div
-            style={{
-              fontSize: "28px",
-              lineHeight: 1.4,
-              color: "#a1a1aa",
-            }}
-          >
-            {DATA.description}
-          </div>
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "12px",
-            flexWrap: "wrap",
-          }}
-        >
-          {["TypeScript", "Next.js", "Rust", "Java", "Solidity", "AI Agents"].map(
-            (badge) => (
-              <div
-                key={badge}
-                style={{
-                  padding: "8px 18px",
-                  borderRadius: "9999px",
-                  border: "1px solid rgba(255,255,255,0.15)",
-                  backgroundColor: "rgba(255,255,255,0.05)",
-                  fontSize: "20px",
-                  color: "#e4e4e7",
-                }}
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+                padding: "10px 20px",
+                borderRadius: "9999px",
+                border: "1px solid rgba(255,255,255,0.14)",
+                backgroundColor: "rgba(255,255,255,0.06)",
+                fontSize: "17px",
+                color: "#e4e4e7",
+              }}
+            >
+              <span>wakhidpangestu.web.id</span>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#a1a1aa"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
-                {badge}
-              </div>
-            )
-          )}
+                <path d="M7 17L17 7" />
+                <path d="M7 7h10v10" />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
     ),
