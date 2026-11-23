@@ -179,40 +179,16 @@ export const DATA = {
   ],
   work: [
     {
-      company: "Freelance",
+      company: "ZenLab Studio",
       location: "Jakarta, Indonesia",
-      title: "Freelance Software Engineer",
-      start: "May 2024",
-      end: "Present",
-      highlights: [
-        "Built responsive landing pages, company profiles, and CMS platforms with HTML5, TypeScript, React, and Next.js.",
-        "Integrated REST APIs with PHP or Node.js and SQL backends to deliver complete web products.",
-        "Created polished interfaces with SCSS / SASS, animation, and reusable UI components.",
-        "Managed client work from requirements gathering through deployment on Vercel and AWS.",
-      ],
-    },
-    {
-      company: "Dicoding Community Network UNINDRA",
-      location: "Jakarta, Indonesia",
-      title: "Technical Mentor",
-      start: "November 2025",
-      end: "May 2026",
-      highlights: [
-        "Mentored the AI Engineer learning path across Python, AI / ML fundamentals, LLMs, RAG, AI Agents, LangChain, and API integration.",
-        "Delivered AI Engineering sessions on emerging technology, career paths, and practical engineering skills.",
-        "Guided hands-on projects and contributed to learning activities and technical content for the community program.",
-      ],
-    },
-    {
-      company: "ZenLabs",
-      location: "Jakarta, Indonesia",
-      title: "Founder & Freelance Developer",
+      title: "Founder, CTO & Software Engineer",
       start: "August 2023",
       end: "Present",
       highlights: [
-        "Founded a freelance technology brand serving individuals, startups, and small businesses with end-to-end digital solutions.",
-        "Designed and developed websites, responsive interfaces, and custom web applications using React, JavaScript, and Tailwind CSS.",
-        "Led requirements, UI / UX design, development, deployment, maintenance, and client support.",
+        "Founded a SaaS startup and software engineering studio building custom business software and digital products for UMKM through enterprise clients.",
+        "Architected and shipped end-to-end web applications, SaaS platforms, and APIs using TypeScript, React, Next.js, Node.js, and SQL databases.",
+        "Expanded into hardware services through Teknify.id, a home-service division providing on-demand gadget diagnostics, repair, and maintenance.",
+        "Led product strategy, system architecture, engineering execution, deployment, and client operations.",
       ],
     },
     {
