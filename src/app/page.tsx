@@ -10,7 +10,7 @@ import { DATA } from "@/data/resume";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
-import { siCrewai, siEthereum, siEthers, siGit, siHuggingface, siJavascript, siLangchain, siNextdotjs, siNodedotjs, siOpenapiinitiative, siPostgresql, siPython, siReact, siSolidity, siSupabase, siTailwindcss, siTensorflow, siTypescript, siVercel, siWalletconnect } from "simple-icons";
+import { siCrewai, siEthereum, siEthers, siGit, siHuggingface, siJavascript, siLangchain, siNextdotjs, siNodedotjs, siOpenapiinitiative, siOpenjdk, siPostgresql, siPython, siReact, siRust, siSolidity, siSupabase, siTailwindcss, siTensorflow, siTypescript, siVercel, siWalletconnect } from "simple-icons";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -19,16 +19,21 @@ const SKILL_ICONS = {
   "Smart Contract Development": siSolidity, "Ethers.js": siEthers, "Wallet Integration": siWalletconnect,
   "React.js": siReact, "Next.js": siNextdotjs, TypeScript: siTypescript, JavaScript: siJavascript,
   "Tailwind CSS": siTailwindcss, "Node.js": siNodedotjs, Python: siPython, PostgreSQL: siPostgresql,
+  Rust: siRust, Java: siOpenjdk,
   Supabase: siSupabase, "REST APIs": siOpenapiinitiative, "AI / ML Fundamentals": siTensorflow,
   LLMs: siHuggingface, RAG: siLangchain, "AI Agents": siCrewai, LangChain: siLangchain,
   Git: siGit, Vercel: siVercel,
 } as const;
 
-type SkillWithIcon = keyof typeof SKILL_ICONS | "Arbitrum" | "AWS";
+type SkillWithIcon = keyof typeof SKILL_ICONS | "Arbitrum" | "AWS" | "Viem";
 
 function SkillIcon({ skill }: { skill: SkillWithIcon }) {
   if (skill === "AWS") {
     return <img src="/aws.jpg" alt="AWS logo" className="size-4 shrink-0 object-contain" />;
+  }
+
+  if (skill === "Viem") {
+    return <svg viewBox="0 0 24 24" className="size-4 shrink-0" fill="currentColor" role="img" aria-label="Viem logo"><path d="M4 5h3.5L12 15.2 16.5 5H20l-6.5 14h-3L4 5Z" /></svg>;
   }
 
   if (skill === "Arbitrum") {

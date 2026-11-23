@@ -49,12 +49,12 @@ export const DATA = {
       skills: ["TypeScript", "React.js", "Next.js", "Tailwind CSS"],
     },
     {
-      title: "Backend & Data",
-      skills: ["Node.js", "Python", "PostgreSQL", "Supabase"],
+      title: "Systems & Backend",
+      skills: ["Rust", "Java", "Node.js", "Python", "PostgreSQL"],
     },
     {
-      title: "Web3, AI & Tools",
-      skills: ["Solidity", "Ethereum", "AI Agents", "Git"],
+      title: "Web3 & AI",
+      skills: ["Solidity", "Viem", "AI Agents"],
     },
   ],
   web3Highlights: [
