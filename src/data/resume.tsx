@@ -98,7 +98,7 @@ export const DATA = {
     },
     {
       title: "Pandu",
-      dates: "ETHJKT Hackathon · 2026",
+      dates: "ETHJKT Hackathon · #12 · 2026",
       description:
         "A Web3 real-world asset (RWA) project built during ETHJKT. Pandu explores how onchain rails can make real-world assets easier to access and use.",
       tags: ["Web3", "RWA", "Ethereum", "Hackathon"],
@@ -137,7 +137,7 @@ export const DATA = {
     {
       title: "ETHJKT Hackathon",
       location: "Jakarta, Indonesia",
-      dates: "Ethereum Jakarta · 2026",
+      dates: "#12 · Ethereum Jakarta · 2026",
       logoUrl: "/ethjkt.png",
       description:
         "Built Pandu, a Web3 RWA project, alongside other Indonesian builders. The weekend was a focused sprint of product thinking, rapid prototyping, and sharing ideas with the local Ethereum community.",
