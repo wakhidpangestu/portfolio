@@ -127,6 +127,7 @@ export const DATA = {
       tags: ["Flutter", "Dart", "Firebase", "Cloud Functions", "Firestore"],
       image: "/guyub.svg",
       github: "https://github.com/wakhidpangestu/guyub",
+      website: "https://guyubapp.web.id",
     },
     {
       title: "Pandu",
