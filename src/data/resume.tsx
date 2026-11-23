@@ -45,49 +45,16 @@ export const DATA = {
   },
   skillGroups: [
     {
-      title: "Web3 & Smart Contracts",
-      skills: [
-        "Solidity",
-        "Ethereum",
-        "Arbitrum",
-        "EVM",
-        "Smart Contract Development",
-        "Ethers.js",
-        "Wallet Integration",
-      ],
-    },
-    {
       title: "Frontend",
-      skills: [
-        "React.js",
-        "Next.js",
-        "TypeScript",
-        "JavaScript",
-        "Tailwind CSS",
-      ],
+      skills: ["TypeScript", "React.js", "Next.js", "Tailwind CSS"],
     },
     {
       title: "Backend & Data",
-      skills: [
-        "Node.js",
-        "Python",
-        "PostgreSQL",
-        "Supabase",
-        "REST APIs",
-      ],
+      skills: ["Node.js", "Python", "PostgreSQL", "Supabase"],
     },
     {
-      title: "AI & Developer Tools",
-      skills: [
-        "AI / ML Fundamentals",
-        "LLMs",
-        "RAG",
-        "AI Agents",
-        "LangChain",
-        "Git",
-        "Vercel",
-        "AWS",
-      ],
+      title: "Web3, AI & Tools",
+      skills: ["Solidity", "Ethereum", "AI Agents", "Git"],
     },
   ],
   web3Highlights: [
