@@ -140,6 +140,33 @@ export const DATA = {
   ],
   hackathons: [
     {
+      title: "GDGoC ITB STACK 2026",
+      location: "Indonesia",
+      dates: "Top Semifinalist (In Progress) · 2026",
+      logoUrl: "/guyub.svg",
+      description:
+        "Building Guyub, an all-in-one event operations platform for communities and campus organizations using Flutter Web and Firebase. Currently advancing as a Top Semifinalist.",
+      github: "https://github.com/wakhidpangestu/guyub",
+    },
+    {
+      title: "LOGICODIX 2026",
+      location: "Indonesia",
+      dates: "#10 Top Semifinalist · 2026",
+      logoUrl: "/zap.svg",
+      description:
+        "Built ZAP (Zero Answer Policy) with team unindra_coders—a Socratic cognitive AI math tutor and real-time 3D interactive whiteboard powered by Three.js/WebGL and SymPy deterministic verification.",
+      github: "https://github.com/wakhidpangestu/ZAP",
+    },
+    {
+      title: "UINIC 8.0 — Web Development Competition",
+      location: "Yogyakarta, Indonesia",
+      dates: "#9 Top Semifinalist · 2026",
+      logoUrl: "/zaky.svg",
+      description:
+        "Led team Veritas to build Zaky, a federated zakat distribution verification network with 4-eyes segregation, append-only hash-chain audit trails, Ed25519 attestation, and an interactive 3D office simulation.",
+      github: "https://github.com/wakhidpangestu/zaky",
+    },
+    {
       title: "ETHJKT Hackathon",
       location: "Jakarta, Indonesia",
       dates: "Ethereum Jakarta · 2026",
