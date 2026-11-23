@@ -1,10 +1,10 @@
  
 
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { allPosts } from "content-collections";
 import { DATA } from "@/data/resume";
-
-export const runtime = "edge";
 
 export const alt = "Blog Post";
 export const size = {
@@ -15,19 +15,10 @@ export const contentType = "image/png";
 
 const getFontData = async () => {
     try {
+        const publicDir = path.join(process.cwd(), "public");
         const [cabinetGrotesk, clashDisplay] = await Promise.all([
-            fetch(
-                new URL(
-                    "../../../../public/fonts/CabinetGrotesk-Medium.ttf",
-                    import.meta.url
-                )
-            ).then((res) => res.arrayBuffer()),
-            fetch(
-                new URL(
-                    "../../../../public/fonts/ClashDisplay-Semibold.ttf",
-                    import.meta.url
-                )
-            ).then((res) => res.arrayBuffer()),
+            readFile(path.join(publicDir, "fonts", "CabinetGrotesk-Medium.ttf")),
+            readFile(path.join(publicDir, "fonts", "ClashDisplay-Semibold.ttf")),
         ]);
         return { cabinetGrotesk, clashDisplay };
     } catch (error) {

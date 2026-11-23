@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { DATA } from "@/data/resume";
-
-export const runtime = "edge";
 
 export const alt = `${DATA.name} — ${DATA.description}`;
 export const size = {
@@ -10,35 +10,22 @@ export const size = {
 };
 export const contentType = "image/png";
 
-const arrayBufferToBase64 = (buffer: ArrayBuffer) => {
-  const bytes = new Uint8Array(buffer);
-  let binary = "";
-  for (let i = 0; i < bytes.byteLength; i++) {
-    binary += String.fromCharCode(bytes[i]);
-  }
-  return btoa(binary);
-};
-
 const getAssets = async () => {
   try {
+    const publicDir = path.join(process.cwd(), "public");
     const [cabinetGrotesk, clashDisplay, avatarBuffer] = await Promise.all([
-      fetch(
-        new URL("../../public/fonts/CabinetGrotesk-Medium.ttf", import.meta.url)
-      ).then((res) => res.arrayBuffer()),
-      fetch(
-        new URL("../../public/fonts/ClashDisplay-Semibold.ttf", import.meta.url)
-      ).then((res) => res.arrayBuffer()),
-      fetch(new URL("../../public/me.png", import.meta.url)).then((res) =>
-        res.arrayBuffer()
-      ),
+      readFile(path.join(publicDir, "fonts", "CabinetGrotesk-Medium.ttf")),
+      readFile(path.join(publicDir, "fonts", "ClashDisplay-Semibold.ttf")),
+      readFile(path.join(publicDir, "me.png")),
     ]);
-    const header = new Uint8Array(avatarBuffer, 0, 4);
     const mime =
-      header[0] === 0xff && header[1] === 0xd8 ? "image/jpeg" : "image/png";
+      avatarBuffer[0] === 0xff && avatarBuffer[1] === 0xd8
+        ? "image/jpeg"
+        : "image/png";
     return {
       cabinetGrotesk,
       clashDisplay,
-      avatarDataUri: `data:${mime};base64,${arrayBufferToBase64(avatarBuffer)}`,
+      avatarDataUri: `data:${mime};base64,${avatarBuffer.toString("base64")}`,
     };
   } catch (error) {
     console.error("Failed to load OG assets:", error);
