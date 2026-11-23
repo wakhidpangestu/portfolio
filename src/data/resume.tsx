@@ -109,7 +109,7 @@ export const DATA = {
   hackathons: [
     {
       title: "GDGoC ITB STACK 2026",
-      location: "Indonesia",
+      location: "Bandung, Indonesia",
       dates: "Top Semifinalist (In Progress) · 2026",
       logoUrl: "/gdg.svg",
       description:
@@ -118,7 +118,7 @@ export const DATA = {
     },
     {
       title: "LOGICODIX 2026",
-      location: "Indonesia",
+      location: "Surabaya, Indonesia",
       dates: "#10 Top Semifinalist · 2026",
       logoUrl: "/logicodix.png",
       description:
