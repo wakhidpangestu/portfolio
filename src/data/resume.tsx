@@ -45,8 +45,8 @@ export const DATA = {
   },
   skillGroups: [
     {
-      title: "Frontend",
-      skills: ["TypeScript", "React.js", "Next.js", "Tailwind CSS"],
+      title: "Frontend, Mobile & Desktop",
+      skills: ["TypeScript", "React.js", "Next.js", "Tailwind CSS", "Flutter", "Kotlin", "Electron"],
     },
     {
       title: "Systems & Backend",

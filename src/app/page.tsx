@@ -6,11 +6,12 @@ import HackathonsSection from "@/components/section/hackathons-section";
 import ProjectsSection from "@/components/section/projects-section";
 import WorkSection from "@/components/section/work-section";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Java } from "@/components/ui/svgs/java";
 import { DATA } from "@/data/resume";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
-import { siCrewai, siEthereum, siEthers, siGit, siHuggingface, siJavascript, siLangchain, siNextdotjs, siNodedotjs, siOpenapiinitiative, siOpenjdk, siPostgresql, siPython, siReact, siRust, siSolidity, siSupabase, siTailwindcss, siTensorflow, siTypescript, siVercel, siWalletconnect } from "simple-icons";
+import { siCrewai, siElectron, siEthereum, siEthers, siFlutter, siGit, siHuggingface, siJavascript, siKotlin, siLangchain, siNextdotjs, siNodedotjs, siOpenapiinitiative, siPostgresql, siPython, siReact, siRust, siSolidity, siSupabase, siTailwindcss, siTensorflow, siTypescript, siVercel, siWalletconnect } from "simple-icons";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -18,18 +19,22 @@ const SKILL_ICONS = {
   Solidity: siSolidity, Ethereum: siEthereum, EVM: siEthereum,
   "Smart Contract Development": siSolidity, "Ethers.js": siEthers, "Wallet Integration": siWalletconnect,
   "React.js": siReact, "Next.js": siNextdotjs, TypeScript: siTypescript, JavaScript: siJavascript,
-  "Tailwind CSS": siTailwindcss, "Node.js": siNodedotjs, Python: siPython, PostgreSQL: siPostgresql,
-  Rust: siRust, Java: siOpenjdk,
+  "Tailwind CSS": siTailwindcss, Flutter: siFlutter, Kotlin: siKotlin, Electron: siElectron,
+  "Node.js": siNodedotjs, Python: siPython, PostgreSQL: siPostgresql, Rust: siRust,
   Supabase: siSupabase, "REST APIs": siOpenapiinitiative, "AI / ML Fundamentals": siTensorflow,
   LLMs: siHuggingface, RAG: siLangchain, "AI Agents": siCrewai, LangChain: siLangchain,
   Git: siGit, Vercel: siVercel,
 } as const;
 
-type SkillWithIcon = keyof typeof SKILL_ICONS | "Arbitrum" | "AWS" | "Viem";
+type SkillWithIcon = keyof typeof SKILL_ICONS | "Arbitrum" | "AWS" | "Viem" | "Java";
 
 function SkillIcon({ skill }: { skill: SkillWithIcon }) {
   if (skill === "AWS") {
     return <img src="/aws.jpg" alt="AWS logo" className="size-4 shrink-0 object-contain" />;
+  }
+
+  if (skill === "Java") {
+    return <Java className="size-4 shrink-0" aria-label="Java logo" />;
   }
 
   if (skill === "Viem") {
