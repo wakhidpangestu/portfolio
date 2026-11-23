@@ -102,8 +102,9 @@ export const DATA = {
       description:
         "A Web3 real-world asset (RWA) project built during ETHJKT. Pandu explores how onchain rails can make real-world assets easier to access and use.",
       tags: ["Web3", "RWA", "Ethereum", "Hackathon"],
-      image: "/ethjkt.png",
+      image: "/pandu.svg",
       github: "https://github.com/PANDUWEB3/pandu",
+      website: "https://www.panduweb3.my.id",
     },
   ],
   hackathons: [
